@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+*.csv
+leads-*.csv
+.DS_Store
+DESIGN.md
+PLAN.md
+SKILL.md
+.claude/
