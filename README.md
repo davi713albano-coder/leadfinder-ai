@@ -1,44 +1,30 @@
 <div align="center">
 
-# 🔍 leadfinder-ai
+# leadfinder-ai
 
-```
- ██╗     ███████╗ █████╗ ██████╗ ███████╗██╗███╗   ██╗██████╗ ███████╗██████╗        █████╗ ██╗
- ██║     ██╔════╝██╔══██╗██╔══██╗██╔════╝██║████╗  ██║██╔══██╗██╔════╝██╔══██╗      ██╔══██╗██║
- ██║     █████╗  ███████║██║  ██║█████╗  ██║██╔██╗ ██║██║  ██║█████╗  ██████╔╝█████╗███████║██║
- ██║     ██╔══╝  ██╔══██║██║  ██║██╔══╝  ██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗╚════╝██╔══██║██║
-███████╗███████╗██║  ██║██████╔╝██║     ██║██║ ╚████║██████╔╝███████╗██║  ██║      ██║  ██║██║
-╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝      ╚═╝  ╚═╝╚═╝
-```
+**Find local businesses without websites. One command, 10 seconds, CSV ready.**
 
-**Find local businesses without websites. 10 seconds. One command.**
+A prospecting CLI for freelance web developers who want clients, not busywork.
 
 [![npm version](https://img.shields.io/npm/v/leadfinder-ai?color=cb3837&label=npm&logo=npm)](https://www.npmjs.com/package/leadfinder-ai)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
-[![Made in Brazil](https://img.shields.io/badge/made%20in-Brazil-009c3b?logoColor=white)](#)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+[![Made in Brazil](https://img.shields.io/badge/made%20in-Brazil-009c3b)](#)
 
-_Prospecting tool for freelance web developers who want clients, not busywork._<br>
-_PT-BR first_ — all output and defaults are in Brazilian Portuguese. English README for global reach.
+_PT-BR first -- all output and defaults are in Brazilian Portuguese. English README for global reach._
 
 </div>
 
 ---
 
-## 🎯 The Problem
+## The Problem
 
-It's 9 PM. You want clients. You open Google Maps and search "barbearias Curitiba". You click the first result — they have a website. The second — website. The third — no website. You copy the name, phone, address into a spreadsheet. Then the fourth, fifth, sixth... After 45 minutes you have 6 leads and tired fingers.
+It is 9 PM. You want clients. You open Google Maps and search "barbearias Curitiba". You click the first result -- they have a website. The second -- website. The third -- no website. You copy the name, phone, address into a spreadsheet. Then the fourth, fifth, sixth... After 45 minutes you have 6 leads and tired fingers.
 
-**You did 3 hours of data entry just to find 10 businesses that need you.**
+You did 3 hours of data entry just to find 10 businesses that need you.
 
-That's not prospecting. That's suffering.
-
----
-
-## 💡 The Solution
-
-**leadfinder-ai** does in 10 seconds what takes you 3 hours manually:
+## The Solution
 
 ```bash
 npx leadfinder-ai prospect barbearias Curitiba
@@ -46,9 +32,7 @@ npx leadfinder-ai prospect barbearias Curitiba
 
 One command. 20 businesses without websites. CSV ready. Go sell.
 
----
-
-## 🎬 Demo
+### Demo
 
 ```
 $ npx leadfinder-ai prospect barbearias Curitiba
@@ -62,14 +46,12 @@ $ npx leadfinder-ai prospect barbearias Curitiba
   Barbearia Vintage              (41) 99999-0001       4.8         127
   Barber Shop Premium            (41) 99999-0002       4.2         34
   Cortes & Cia                   (41) 99999-0003       4.6         89
-  Barba &.Bigode                 (41) 99999-0004       4.9         201
+  Barba & Bigode                 (41) 99999-0004       4.9         201
   Navalha de Ouro                (41) 99999-0005       3.9         12
   ...
 ```
 
----
-
-## ⏱️ Time Saved
+### Time Saved
 
 | Task | Manual | leadfinder-ai | Saved |
 |------|--------|---------------|-------|
@@ -79,67 +61,68 @@ $ npx leadfinder-ai prospect barbearias Curitiba
 | Sort by rating/reviews | Manual guesswork | Data in columns | 100% |
 | Repeat for another city | Start from zero | Change one word | ~99% |
 
-> **3 hours → 10 seconds.** That's not an optimization. That's a superpower.
+---
+
+## Feature Highlights
+
+- **One-command prospecting** -- search any niche in any Brazilian city
+- **Automatic website filtering** -- only businesses without a website appear in results
+- **Excel-ready CSV export** -- UTF-8 BOM encoding so Portuguese accents (a, c, e, o) display correctly
+- **20+ niche mappings** -- barbearias, restaurantes, dentistas, and more, auto-translated to Google Place Types
+- **Up to 60 results** -- paginate with `--pages` for broader searches
+- **Open-now filter** -- target only businesses currently open
+- **Dry-run mode** -- test your API key with a single result before a full search
+- **Programmatic API** -- import and call `prospect()` from your own Node.js code
+- **Official Google Places API** -- no scraping, LGPD-compliant, public data only
 
 ---
 
-## 📦 Install
+## Quick Start
 
-Three ways to use it — pick your favorite:
+### Prerequisites
 
-### ⚡ Option 1: npx (no install required)
+- Node.js >= 18
+- A Google Places API key ([get one free](https://console.cloud.google.com/apis/credentials))
 
-```bash
-npx leadfinder-ai prospect barbearias Curitiba
-```
+### Set Up Your API Key
 
-### 🌐 Option 2: npm global install
+1. Go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+2. Create a project, then create an **API Key** credential
+3. Enable the [Places API (New)](https://console.cloud.google.com/apis/library/places.googleapis.com)
 
-```bash
-npm install -g leadfinder-ai
-leadfinder-ai prospect barbearias Curitiba
-```
-
-### 🤖 Option 3: AI Agent (OpenCode / Claude Code / Cursor)
-
-Just tell your AI agent what you need:
-
-> "Find barbershops in Curitiba without websites"
-
-See [OpenCode Skill](#-opencode-skill) and [Claude Code](#-claude-code) sections below.
-
----
-
-## 🔑 Setup
-
-You need a Google Places API key. It's free to start:
-
-| Step | Action | Link |
-|------|--------|------|
-| 1️⃣ | Go to Google Cloud Console | [console.cloud.google.com](https://console.cloud.google.com/apis/credentials) |
-| 2️⃣ | Create a project → Create Credentials → **API Key** | Same page |
-| 3️⃣ | Enable **Places API (New)** | [Enable here](https://console.cloud.google.com/apis/library/places.googleapis.com) |
-
-Then set your key:
+Then configure your key:
 
 ```bash
 # Option A: .env file (recommended)
 echo "LEADFINDER_GOOGLE_API_KEY=your_key_here" > .env
 
 # Option B: Environment variable
-export LEADFINDER_GOOGLE_API_KEY=your_key_here    # Linux/macOS
-set LEADFINDER_GOOGLE_API_KEY=your_key_here        # Windows CMD
-$env:LEADFINDER_GOOGLE_API_KEY="your_key_here"    # Windows PowerShell
+export LEADFINDER_GOOGLE_API_KEY=your_key_here       # Linux/macOS
+set LEADFINDER_GOOGLE_API_KEY=your_key_here           # Windows CMD
+$env:LEADFINDER_GOOGLE_API_KEY="your_key_here"        # Windows PowerShell
 
 # Option C: Pass via flag
 npx leadfinder-ai prospect barbearias Curitiba --api-key YOUR_KEY
 ```
 
-> 💡 **Tip:** Use `--dry-run` to test your API key with just 1 result before a full search.
+### Installation
+
+**No install required** -- run directly with npx:
+
+```bash
+npx leadfinder-ai prospect barbearias Curitiba
+```
+
+Or install globally:
+
+```bash
+npm install -g leadfinder-ai
+leadfinder-ai prospect barbearias Curitiba
+```
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Commands
 
@@ -197,41 +180,27 @@ console.log(`Found ${leads.length} leads without websites`)
 
 ---
 
-## 🤖 OpenCode Skill
-
-Use leadfinder-ai as an AI skill inside [OpenCode](https://opencode.ai):
+## How It Works
 
 ```
-You: "Find barbershops in Curitiba without websites"
-AI:  Running: npx leadfinder-ai prospect barbearias Curitiba
-     → Found 12 businesses without websites
-     → Saved to leads-barbearias-curitiba-2026-06-24.csv
-     → Want me to craft outreach messages for the top leads?
+  You                     Google Places API           Filter
+  type niche + city  -->  Text Search (official) -->  no website = hot leads
+                                                           |
+                                                      CSV export
+                                                      UTF-8 BOM
 ```
 
-Just say what you need in natural language — the AI handles the rest.
+1. **Search** -- sends a text query like "barbearias em Curitiba" to the Google Places Text Search API
+2. **Fetch** -- retrieves name, phone, address, rating, and website URI in a single call using optimized field masks
+3. **Filter** -- removes any business that already has a website, keeping only the ones that need one
+4. **Export** -- writes a UTF-8 BOM CSV file that opens correctly in Excel with Portuguese accents
+5. **Outreach** -- you reach out manually. The tool organizes, you connect.
 
 ---
 
-## 🧠 Claude Code
+## Output Format
 
-Use inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code):
-
-```
-You: /prospect barbearias Curitiba
-AI:  Found 12 businesses without websites in Curitiba.
-     Here are the top leads...
-```
-
-Works the same way in **Cursor**, **Windsurf**, or any AI agent that can run CLI commands.
-
----
-
-## 📄 Output Format
-
-Generates a **UTF-8 BOM CSV** — opens perfectly in Excel with Portuguese accents (ã, ç, é, õ, etc).
-
-**File:** `leads-barbearias-curitiba-2026-06-24.csv`
+Generates a UTF-8 BOM CSV file named `leads-<nicho>-<cidade>-<date>.csv`.
 
 ### Columns
 
@@ -240,7 +209,7 @@ Generates a **UTF-8 BOM CSV** — opens perfectly in Excel with Portuguese accen
 | `nome` | string | Business name |
 | `telefone` | string | National phone number |
 | `endereco` | string | Formatted address |
-| `avaliacao` | number | Google rating (1.0–5.0) |
+| `avaliacao` | number | Google rating (1.0-5.0) |
 | `num_reviews` | number | Total review count |
 | `tem_site` | boolean | Always `nao` (filtered) |
 
@@ -252,57 +221,26 @@ Barbearia Vintage,(41) 99999-0001,"Rua XV de Novembro 123, Curitiba",4.8,127,nao
 Barber Shop Premium,(41) 99999-0002,"Av. Marechal Deodoro 456, Curitiba",4.2,34,nao
 ```
 
-> Only businesses **without** a website are included. The ones with sites are filtered out and counted in the summary.
+Only businesses **without** a website are included. The ones with sites are filtered out and counted in the summary.
 
 ---
 
-## 💰 Pricing
+## AI Agent Integration
 
-Google Places API (New) pricing — you use **your own** API key:
-
-| Item | Value |
-|------|-------|
-| Text Search cost | **$17 / 1,000 calls** |
-| Free monthly credit | **$200/month** |
-| Free searches/month | **~555** |
-| Results per call | Up to **20** |
-| Results with `--pages 3` | Up to **60** |
-
-> **Bottom line:** ~555 free prospect searches per month. That's more than enough for a solo freelancer.
-
----
-
-## 🏗️ How It Works
+Use leadfinder-ai inside OpenCode, Claude Code, Cursor, or any AI agent that runs CLI commands:
 
 ```
-  ┌─────────────────────────────────────────────────────────┐
-  │                   leadfinder-ai                         │
-  │                                                         │
-  │  ┌──────────┐    ┌──────────────┐    ┌──────────────┐  │
-  │  │  You     │───>│  Google      │───>│  Filter      │  │
-  │  │  type    │    │  Places API  │    │  no website  │  │
-  │  │  niche + │    │  (official)  │    │  = hot leads │  │
-  │  │  city    │    │              │    │              │  │
-  │  └──────────┘    └──────────────┘    └──────┬───────┘  │
-  │                                              │          │
-  │                                         ┌────▼─────┐   │
-  │                                         │   CSV    │   │
-  │                                         │  export  │   │
-  │                                         │ UTF-8    │   │
-  │                                         │ BOM      │   │
-  │                                         └──────────┘   │
-  └─────────────────────────────────────────────────────────┘
-
-  1. Search   → "barbearias em Curitiba" via Google Places Text Search
-  2. Fetch    → name, phone, address, rating, website — all fields in 1 call
-  3. Filter   → remove businesses that already have a website
-  4. Export   → CSV with UTF-8 BOM (Excel-ready with Portuguese accents)
-  5. Outreach → YOU reach out manually. Tool organizes. You connect.
+You: "Find barbershops in Curitiba without websites"
+AI:  Running: npx leadfinder-ai prospect barbearias Curitiba
+     -> Found 12 businesses without websites
+     -> Saved to leads-barbearias-curitiba-2026-06-24.csv
 ```
+
+Just say what you need in natural language -- the AI handles the rest.
 
 ---
 
-## 🗺️ Supported Niches
+## Supported Niches
 
 | Portuguese | Google Place Type |
 |---|---|
@@ -331,32 +269,48 @@ Run `npx leadfinder-ai list-types` for the full list, or pass any [Google Place 
 
 ---
 
-## 🛣️ Roadmap
+## Pricing
+
+Google Places API (New) pricing -- you use **your own** API key:
+
+| Item | Value |
+|------|-------|
+| Text Search cost | $17 / 1,000 calls |
+| Free monthly credit | $200/month |
+| Free searches/month | ~555 |
+| Results per call | Up to 20 |
+| Results with `--pages 3` | Up to 60 |
+
+Bottom line: ~555 free prospect searches per month. More than enough for a solo freelancer.
+
+---
+
+## Roadmap
 
 | Version | Feature | Status |
 |---------|---------|--------|
-| v0.1 | `prospect` command + CSV export | ✅ Shipped |
-| v0.2 | Lead ranking (OURO / PRATA / BRONZE) + Excel export | 🔄 In progress |
-| v0.3 | AI skill integration (OpenCode / Claude Code) | 🔄 In progress |
-| v1.0 | PDF reports, multi-city batching, lead tracking | 🔮 Planned |
+| v0.1 | `prospect` command + CSV export | Shipped |
+| v0.2 | Lead ranking (OURO / PRATA / BRONZE) + Excel export | In progress |
+| v0.3 | AI skill integration (OpenCode / Claude Code) | In progress |
+| v1.0 | PDF reports, multi-city batching, lead tracking | Planned |
 
 ---
 
-## ⚖️ Ethical Use
+## Ethical Use
 
 | Principle | Commitment |
 |-----------|------------|
-| 🔑 **Official API only** | Uses Google Places API. No scraping. Ever. |
-| 📋 **Public data only** | Business name, phone, address — all public (LGPD art. 7, III). |
-| ✉️ **No auto-messaging** | You send every message. The tool organizes, you connect. |
-| 🇧🇷 **LGPD compliant** | No consumer personal data collected or stored. |
-| 💾 **Local-only data** | CSV stays on your machine. No cloud. No tracking. |
+| Official API only | Uses Google Places API. No scraping. Ever. |
+| Public data only | Business name, phone, address -- all public (LGPD art. 7, III). |
+| No auto-messaging | You send every message. The tool organizes, you connect. |
+| LGPD compliant | No consumer personal data collected or stored. |
+| Local-only data | CSV stays on your machine. No cloud. No tracking. |
 
-> _This tool organizes public business data from Google Maps. It does not scrape, does not send automatic messages, and does not store consumer personal data. Ethical use is your responsibility._
+This tool organizes public business data from Google Maps. It does not scrape, does not send automatic messages, and does not store consumer personal data. Ethical use is your responsibility.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repo
 2. Create a feature branch: `git checkout -b feat/my-feature`
@@ -364,20 +318,20 @@ Run `npx leadfinder-ai list-types` for the full list, or pass any [Google Place 
 4. Push to the branch: `git push origin feat/my-feature`
 5. Open a Pull Request
 
-PRs are welcome — whether it's a new niche, a bug fix, or a feature from the roadmap.
+PRs are welcome -- whether it is a new niche, a bug fix, or a feature from the roadmap.
 
 ---
 
-## 📜 License
+## License
 
-[MIT](LICENSE) — use it, fork it, sell with it. Just don't spam people.
+[MIT](LICENSE) -- use it, fork it, sell with it. Just do not spam people.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ in Brazil** 🇧🇷
+Made in Brazil
 
-_Your next client is one command away._
+Your next client is one command away.
 
 </div>
